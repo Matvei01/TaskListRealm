@@ -10,7 +10,7 @@
         <!--Root View Controller-->
         <scene sceneID="tQX-aa-TPo">
             <objects>
-                <tableViewController id="gV7-VQ-LOy" sceneMemberID="viewController">
+                <tableViewController id="gV7-VQ-LOy" customClass="TaskListViewController" customModule="TaskListRealm" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="uR2-Jl-n5y">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +23,7 @@
                                 <segment title="Second"/>
                             </segments>
                             <connections>
-                                <action selector="sortingList:" destination="ODv-9C-tbO" eventType="valueChanged" id="wlO-9b-GOm"/>
+                                <action selector="sortingList:" destination="gV7-VQ-LOy" eventType="valueChanged" id="bwt-PO-oLI"/>
                             </connections>
                         </segmentedControl>
                         <prototypes>
@@ -60,38 +60,43 @@
                             <outlet property="delegate" destination="gV7-VQ-LOy" id="Dl8-Ce-bJz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="5gi-Wt-bkd"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="5gi-Wt-bkd">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2wb-jB-8KJ">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="gV7-VQ-LOy" id="9s0-61-bsT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T91-mQ-P5d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="ODv-9C-tbO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="418" y="37"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Tasks View Controller-->
         <scene sceneID="GQZ-n4-4yw">
             <objects>
-                <tableViewController id="DhD-Hx-UxX" sceneMemberID="viewController">
+                <tableViewController id="DhD-Hx-UxX" customClass="TasksViewController" customModule="TaskListRealm" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="dir-sO-dfP">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TasksCell" textLabel="x9Y-Tv-7mT" detailTextLabel="9bQ-5T-J79" style="IBUITableViewCellStyleSubtitle" id="5b1-xg-CXK">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="50" width="393" height="55.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5b1-xg-CXK" id="0A6-Jg-Fej">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="55.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x9Y-Tv-7mT">
-                                            <rect key="frame" x="20" y="5" width="33" height="20.333333333333332"/>
+                                            <rect key="frame" x="20" y="8.9999999999999982" width="33" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9bQ-5T-J79">
-                                            <rect key="frame" x="19.999999999999996" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                            <rect key="frame" x="19.999999999999996" y="31.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" systemColor="systemGrayColor"/>
