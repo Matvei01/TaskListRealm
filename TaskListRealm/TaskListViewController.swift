@@ -81,9 +81,14 @@ class TaskListViewController: UITableViewController {
     }
     
     @IBAction func sortingList(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            taskLists = taskLists.sorted(byKeyPath: "date")
+        }
+        else {
+            taskLists = taskLists.sorted(byKeyPath: "name")
+        }
+        tableView.reloadData()
     }
-    
-    
     
     private func createTempData() {
         DataManager.shared.createTempData {

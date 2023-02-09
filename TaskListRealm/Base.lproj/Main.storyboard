@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Task List-->
         <scene sceneID="tQX-aa-TPo">
             <objects>
                 <tableViewController id="gV7-VQ-LOy" customClass="TaskListViewController" customModule="TaskListRealm" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,11 +16,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="YVU-yi-O7D">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="31"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="First"/>
-                                <segment title="Second"/>
+                                <segment title="Date"/>
+                                <segment title="A-Z"/>
                             </segments>
                             <connections>
                                 <action selector="sortingList:" destination="gV7-VQ-LOy" eventType="valueChanged" id="bwt-PO-oLI"/>
@@ -28,7 +28,7 @@
                         </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskListCell" textLabel="lDs-lR-Ze2" detailTextLabel="gmF-IG-oKE" style="IBUITableViewCellStyleValue1" id="1be-01-n1R">
-                                <rect key="frame" x="0.0" y="81" width="393" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="82" width="393" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1be-01-n1R" id="rnR-9P-EPO">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
@@ -60,7 +60,7 @@
                             <outlet property="delegate" destination="gV7-VQ-LOy" id="Dl8-Ce-bJz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="5gi-Wt-bkd">
+                    <navigationItem key="navigationItem" title="Task List" id="5gi-Wt-bkd">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="2wb-jB-8KJ">
                             <connections>
                                 <action selector="addButtonPressed:" destination="gV7-VQ-LOy" id="9s0-61-bsT"/>
@@ -121,8 +121,8 @@
         <scene sceneID="3Bs-sv-161">
             <objects>
                 <navigationController id="fdN-5e-NjZ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="E2G-5u-Oyh">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="E2G-5u-Oyh">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
